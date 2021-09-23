@@ -1,0 +1,180 @@
+@import 'src/assets/styles/colors.scss';
+
+.data-entry-grid-container {
+    margin-top: 22px;
+    font-family: $exeption-family;
+
+    ::ng-deep app-icon-text {
+
+        .icon-container {
+            margin-bottom: 17px;
+        }
+    }
+
+    ::ng-deep angular-slickgrid {
+
+        .slickgrid-container {
+            border-radius: 5px;
+            background: $white;
+
+            .slick-header-left {
+
+                .slick-header-column {
+
+                    &:first-child {
+                        padding-left: 25px;
+                    }
+
+                    &:last-child {
+                        border-right: 1px solid $valid-color;
+                    }
+                }
+            }
+
+            .slick-header-columns {
+                display: flex;
+                border-bottom: 1px solid $valid-color;
+                .slick-column-name {
+                    -webkit-line-clamp: initial !important;
+                }
+                .slick-header-column {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100px;
+                    line-height: 19px;
+                    font-size: 16px;
+                    font-family: $exeption-family;
+                    color: $default-text-color;
+                    border-bottom: none!important;
+                    overflow-y: auto;
+                    span.slick-sort-indicator {
+                        top: calc((15px * 2) - 20px) !important;
+                        &::before {
+                            transition: all 0.5s;
+                        }
+                    }
+                    &:hover .slick-header-menubutton {
+                        pointer-events: none !important;
+                        display: none !important;
+                    }
+                    &.ui-state-hover {
+                        >span.slick-sort-indicator::before {
+                            content: url('/assets/images/ansm_icons/Chevron.svg') !important;
+                        }
+                    }
+                    &.slick-header-column-sorted {
+                        >span.slick-sort-indicator-asc::before {
+                            content: url('/assets/images/ansm_icons/Chevron.svg') !important;
+                        }
+                        >span.slick-sort-indicator-desc::before {
+                            content: url('/assets/images/ansm_icons/Chevron.svg') !important;
+                            -webkit-transform: rotate(180deg);
+                            -moz-transform: rotate(180deg);
+                            transform: rotate(180deg);
+                        }
+                    }
+                    &.collapsed {
+
+                        + .slick-header-column {
+                            box-shadow: $input-shadow;
+                        }
+
+                        .slick-column-name {
+                            display: none;
+                        }
+                    }
+
+                    .slick-column-name {
+                        margin-bottom: 0;
+                        margin-right: 20px;
+
+                        .col-name {
+                            margin-bottom: 3px;
+                        }
+
+                        .indc-date {
+                            margin-bottom: 0;
+                            font-size: 12px;
+                        }
+                    }
+
+                    .slick-header-button {
+                        position: absolute;
+                        right: 10px;
+                        margin-bottom: 0;
+                        font-size: 20px;
+                    }
+                }
+            }
+
+            .slick-pane-left {
+
+                .slick-cell {
+
+                    &:first-child {
+                        padding-left: 25px;
+                    }
+
+                    &:last-child {
+                        border-right: 1px solid $valid-color;
+                    }
+                }
+            }
+
+            .slick-cell {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                font-family: $exeption-family;
+                text-overflow: unset;
+                white-space: initial;
+                .warning-control {
+                    color: $error-color;
+                }
+                .archive-value {
+                    color: $inactive-text-grey;
+                    font-style: italic;
+                }
+                
+                &:not(.invalid) {
+                    border: none;
+                }
+
+                &.collapsed {
+                    text-indent: 150%;
+                    white-space: nowrap;
+                    overflow: hidden;
+
+                    + .slick-cell {
+                        box-shadow: $input-shadow;
+                    }
+                }
+
+                &.editable {
+                    box-shadow: none;
+                    border: initial;
+                }
+
+                &.invalid {
+                    border-color: $error-color;
+                    animation-duration: 4s;
+                }
+
+                input {
+                    border: none;
+                }
+            }
+
+            .slick-range-decorator {
+                border: 2px solid $valid-color!important;
+            }
+        }
+    }
+
+    .grid-error {
+        float: right;
+        color: $error-color;
+    }
+}

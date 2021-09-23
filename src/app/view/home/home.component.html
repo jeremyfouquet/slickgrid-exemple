@@ -1,0 +1,31 @@
+<div class="row">
+  <div class="left-menu col-lg-5">
+    <h1>{{'_Home_main_title_' | translate}}</h1>
+  </div>
+
+  <app-navbar class="navbar"></app-navbar>
+
+  <div class="col-lg-7 right-content">
+    <div
+      class="message success-msg"
+      *ngIf="home.sessionSucces === true"
+      [translate]="'_Create_Success_'">
+    </div>
+    <div class="navigation" *ngFor="let link of menuLinks">
+        <app-icon-text 
+        (click)="onClick(link)" 
+        [ngClass]="{'disable-click': link.active === false}" 
+        [fontSize]="'21px'" 
+        [fontLineHeight]="'28px'" 
+        [colorInactive]="'grey'" 
+        [active]="link.active"
+        [srcActive]="link.srcActive" 
+        [srcInactive]="link.srcInactive"
+        [altText]="link.altText | translate" 
+        [label]="link.label | translate"
+        [lblUrl]="link.lblUrl">
+        </app-icon-text>
+      </div>
+    </div>
+
+  </div>

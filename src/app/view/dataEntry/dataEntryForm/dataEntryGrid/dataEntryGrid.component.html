@@ -1,0 +1,25 @@
+<div
+[id]="containerId"
+class="data-entry-grid-container"
+*ngIf="hasData">
+    <app-icon-text
+    class="grid-title"
+    [active]="true"
+    [fontSize]="'21px'"
+    [fontLineHeight]="'28px'"
+    [srcActive]="gridIcons[dataType]"
+    [altText]="gridTitle | translate"
+    [label]="gridTitle | translate"></app-icon-text>
+    <angular-slickgrid
+    gridId="data-entry-grid-{{dataType}}"
+    [columnDefinitions]="columnDefinitions"
+    [gridOptions]="gridOptions"
+    [dataset]="gridData.getData(dataType)"
+    [gridHeight]="gridHeight"
+    (onAngularGridCreated)="gridReady($event)"
+    (sgOnClick)="cellClicked()"></angular-slickgrid>
+    <div
+    class="grid-error"
+    *ngIf="error === gridErrors.INVALID_NUMBER_VALUE"
+    [translate]="'_Form_field_error_value_number_'"></div>
+</div>

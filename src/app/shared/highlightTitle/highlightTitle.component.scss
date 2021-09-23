@@ -1,0 +1,13 @@
+@import 'src/assets/styles/colors.scss';
+.title {
+    padding: 20px 0;
+    color: $green;
+    font: $title-font-text;
+}
+::ng-deep .highlight {
+    color: $blue;
+}
+p {
+    font: $text-font;
+    text-align: justify;
+}

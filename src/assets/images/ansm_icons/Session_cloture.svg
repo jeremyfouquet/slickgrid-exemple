@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Cloture_inactif" transform="translate(1.000000, 1.000000)" stroke="#A7ACB6">
+            <path d="M1.95795593,7.32735683 C1.9492933,2.46357175 3.21738994,0.0316792227 5.76229034,0.0316792227 C8.30719075,0.0316792227 9.64550046,2.46357175 9.77721949,7.32735683 L1.95795593,7.32735683 Z" id="Line" stroke-width="1.5" stroke-linecap="square"></path>
+            <rect id="Rectangle" stroke-width="1.5" x="0" y="9.1058415" width="11.8091382" height="8.82128398" rx="3.6043956"></rect>
+            <circle id="Oval" cx="5.83342973" cy="12.2359745" r="1.13823019"></circle>
+            <polygon id="Rectangle" points="6.25241462 13.9433198 5.41444483 13.9433198 4.87119859 15.9352227 6.79566086 15.9352227"></polygon>
+        </g>
+    </g>
+</svg>

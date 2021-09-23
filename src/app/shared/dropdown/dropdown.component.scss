@@ -1,0 +1,243 @@
+@import 'src/assets/styles/colors.scss';
+
+$base-path: '/assets/images/ansm_icons/';
+$pending-icon-svg-path: $base-path + 'Pending_icon.svg';
+.dropdown-title {
+    font: $dropdown-title;
+    color: $default-text-color;
+    &.title-white { 
+        color: $white;
+    }
+}
+.dropdown {
+    .dropdown-toggle {
+        width: 100%;
+        border-radius: 4px;
+        min-height: 40px;
+        height: max-content;
+        &.dropdown-disable {
+            pointer-events: none;
+            background: transparent;
+            &.input-color-disabled-grey {
+                border: 1px solid $inactive-text-grey;
+                color: $inactive-text-grey;
+            }
+            &.input-color-disabled-white {
+                border: 1px solid $white;
+                color: $white;
+            }
+        }
+        &.dropdown-enable {
+            border: 1px solid $default-text-color;
+            background: $white;
+            &.input-valid {
+                border-color: $valid-color;
+            }
+            &.input-invalid {
+                border-color: $error-color;
+            }
+        }
+        &[aria-expanded ="true"] {
+            border-radius: 4px 4px 0 0;
+            border-bottom: 1px solid $default-text-color !important;
+            box-shadow: $input-shadow;
+            &::after {
+                -webkit-transform: rotate(180deg);
+                -moz-transform: rotate(180deg);
+                transform: rotate(180deg);
+            }
+        }
+        >div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        &::after{
+            transition: all 0.5s;
+            position: absolute;
+            font-size: 2em;
+            top: .5em;
+            right: .5em;
+        }
+        .labelInputBox {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            width: max-content;
+            background: $background-color-green-gradient;
+            font: $box-color-font;
+            padding: 5px 10px;
+            margin: 5px 35px 5px 15px;
+            border-radius: 4px;
+            span {
+                &::after {
+                content: url('/assets/images/ansm_icons/Delete_icon.svg');
+                cursor: pointer;
+            }
+            }
+        }
+        .labelInput {
+            p {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                margin: 0;
+                &:hover {
+                    text-overflow: initial;
+                    overflow: auto;
+                }
+                &.pendding{
+                    // color: $warning-color;
+                    display: flex;
+                    &::before{
+                        content: url('/assets/images/ansm_icons/Pending-icon.svg');
+                        display: flex;
+                        margin-right: 18px;
+                        width: 0;
+                        transform: scale(.6);
+                    }
+                }
+            }
+            font: $table-font;
+            padding: 5px 10px;
+            margin: 5px 35px 5px 5px;
+        }
+    }
+    .dropdown-menu {
+        top: auto !important;
+        left: auto !important;
+        transform: none !important;
+        width: 100%;
+        margin: auto;
+        padding: 0;
+        border-radius: 0 0 4px 4px;
+        border: 1px solid $default-text-color;
+        border-top: none; 
+        &.show.bottom-shadow {
+            box-shadow: $input-shadow-bottom
+        }  
+        .picto-search {
+            position: relative;
+            display: flex;
+            margin: 0;
+            min-height: 40px;
+            input[type="text"] {
+                border-radius: 4px;
+                padding-left: 10px;
+                margin: 0;
+                border: none;
+                &.border-input {
+                    width: 100%;
+                    border-bottom: 1px solid $default-text-color;
+                    border-radius: 0;
+                }
+            }
+            span:before {
+                content: url('../../../assets/images/ansm_icons/Chercher.svg');
+                position: absolute;
+                right: .5em;
+                top: .5em;
+            }
+        }
+        .dropdown-option {
+            &.padding-top-and-bottom {
+                overflow: auto;
+                max-height: 30vh;
+                padding: 10px 0;
+                .loader-content {
+                    position: relative !important;
+                    margin-top: 0 !important;
+                }
+            }
+            .dropdown-empty {
+                padding: .25rem 1.5rem;
+                font: $box-color-font;
+                &.too-much-filter {
+                    border-top: 1px solid $default-text-color;
+                }
+            }
+        }
+        .dropdown-list {
+            padding: 0 10px;
+            .default-list {
+                .dropdown-item {
+                    font: $box-color-font;
+                    cursor: pointer;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    padding: 5px 0;
+                    &:hover{
+                        font: $table-font;
+                        color: $blue;
+                        overflow: visible;
+                    }
+                    &.closed{
+                        color: $inactive-text-grey;
+                        display: flex;
+                        &::before{
+                            content: '⊘';
+                            margin-right: 5px;
+                            display: flex;
+
+                        }
+                    }
+                    &.pendding{
+                        color: $warning-color;
+                        display: flex;
+                        &::before{
+                            content: url('/assets/images/ansm_icons/Pending-icon.svg');
+                            display: flex;
+                            margin-right: 18px;
+                            width: 0;
+                            transform: scale(.6);
+                        }
+                    }
+                }
+            }
+        }
+        .checkbox-list {
+            font: $checkbox-font;
+            .dropdown-item {
+                margin: 0;
+                position: relative;
+                white-space: break-spaces;
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                cursor: pointer;
+                &:hover {
+                    .checkmark {
+                        border: none;
+                        background: $background-color-checkbox-gradient;
+                    }
+                }
+            }
+            input {
+                margin-right: 20px;
+                visibility: hidden;
+                &:checked ~ .checkmark{
+                    border: none;
+                    content: url(./../../../assets/images/ansm_icons/Checkbox-actif.svg);
+                }
+            }
+            .checkmark {
+                left: 28.5px;
+                width: 20px;
+                height: 20px;
+                border: 1px solid;
+                border-radius: 4px;
+                position: absolute;
+            }
+            .text-item {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                flex-shrink: 3;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .dropdown {
+        margin-top: 5px;
+    }
+  }

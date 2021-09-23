@@ -1,0 +1,271 @@
+<div class="dropdown row">
+    <app-icon-text class="col-lg-3 p-0" [active]="true" [fontSize]="'21px'" [fontLineHeight]="'28px'" [srcActive]="'ansm_icons/Nom_session.svg'" [altText]="'_SoldOut_form_field_session_name_' | translate"
+        [label]="'_SoldOut_form_field_session_name_' | translate">
+    </app-icon-text>
+    <app-dropdown
+    class="col-lg-5 p-0"
+    [active]="true"
+    [search]="true"
+    [typeOfData]="'data-entry'"
+    [dropdownToggleLabel]="label"
+    [data]="listDataFound"
+    [typeOfList]="'default'"
+    (presentData)="initSelectSession($event)"
+    (keyUpEvent)="handleOnSearch($event)"></app-dropdown>
+    <div 
+    *ngIf="dataBreak"
+    class="btn-group-container col-lg-4 p-0">
+        <div class="btn-group">
+            <button
+            [class.active]="displayFlag === displayStyle.FORM"
+            (click)="switchDisplayFlag()"
+            [translate]="'_DataEntry_FormEntry_'"></button>
+            <button
+            [class.active]="displayFlag === displayStyle.GRID"
+            (click)="switchDisplayFlag()"
+            [translate]="'_DataEntry_GridEntry_'"></button>
+        </div>
+    </div>
+    <div
+    class="dialog-box"
+    *ngIf="dialogDisplayViewChange">
+        <label [translate]="'_DataEntry_ConfirmBeforeViewChange_'"></label>
+        <div class="buttons">
+            <button
+            class="button"
+            [class.input-valid]="displayFlag === displayStyle.GRID || canSave"
+            [class.input-error]="displayFlag === displayStyle.FORM && !canSave"
+            (click)="save()"
+            [translate]="'_DataEntry_form_save_'"></button>
+            <button
+            class="button input-invalid"
+            (click)="closeDisplayDialog(); toggleDisplayFlag()"
+            [translate]="'_DataEntry_ContinueWithoutSave_'"></button>
+            <button
+            class="button input-invalid"
+            (click)="closeDisplayDialog()"
+            [translate]="'_DataEntry_form_cancel_'"></button>
+        </div>
+    </div>
+    <div
+    class="calendar-row row"
+    *ngIf="dataBreak && dataEntryService.dateStart && dataEntryService.dateEnd">
+        <app-icon-text
+        class="col-lg-3 p-0"
+        [active]="true"
+        [fontSize]="'21px'"
+        [fontLineHeight]="'28px'"
+        [srcActive]="'ansm_icons/Calendrier_valide.svg'"
+        altText="{{'_DataEntry_periode_start_' | translate}}"
+        label="{{'_DataEntry_periode_start_' | translate}}"></app-icon-text>
+        <div class="date col-lg-5 p-0">
+            <span
+            class="triangle i-triangle-left"
+            [class.disabled]="!canPrevDate"
+            (click)="prevDate()"></span>
+            <label>{{dataEntryService.dateStart | date:'dd-MM-y' }} {{"_DataEntry_periode_end_" | translate}} {{dataEntryService.dateEnd | date:'dd-MM-y'}}</label>
+            <span
+            class="triangle i-triangle-right"
+            [class.disabled]="!canNextDate"
+            (click)="nextDate()"></span>
+        </div>
+    </div>
+</div>
+<div
+class="message success-msg"
+*ngIf="validateSuccess"
+[translate]="'_DataEntry_ValidateSuccess_'"></div>
+<div
+class="message error-msg"
+*ngIf="controlError && controlError < 0"
+[translate]="'_DataEntry_ControlError_Tech_'"></div>
+<div
+class="message error-msg"
+*ngIf="controlError && controlError === 1">{{"_DataEntry_ControlError_Data_One_Error_" | translate}}</div>
+<div
+class="message error-msg"
+*ngIf="controlError && controlError > 1">{{controlError}} {{"_DataEntry_ControlError_Data_Multiple_Errors_" | translate}}</div>
+<div class="position-relative">
+    <div class="loader-content" *ngIf="(loader.showSpinner === true)">
+        <mat-progress-spinner  mode="indeterminate">
+        </mat-progress-spinner>
+    </div>
+    <div *ngIf="(loader.showSpinner === false)">
+        <div
+        class="grid-container"
+        *ngIf="displayFlag === displayStyle.GRID && presentationData">
+            <app-data-entry-grid
+            [gridTitle]="'_DataEntry_type_starting_title_'"
+            [dataType]="gridDataType.STARTING"
+            [readOnly]="readOnly"
+            [data]="presentationData"></app-data-entry-grid>
+            <app-data-entry-grid
+            [gridTitle]="'_DataEntry_type_recurrent_title_'"
+            [dataType]="gridDataType.RECURRENT"
+            [readOnly]="readOnly"
+            [data]="presentationData"
+            [archivedData]="this.archivedData"></app-data-entry-grid>
+            <div
+            class="message success-msg"
+            *ngIf="gridData.saveSuccess"
+            [translate]="'_DataEntry_SaveSuccess_'"></div>
+            <div
+            class="message error-msg"
+            *ngIf="gridData.error"
+            [translate]="'_Common_UnkownError_'"></div>
+            <footer *ngIf="areFooterButtonsShown">
+                <button
+                class="button input-valid"
+                (click)="gridData.save()"
+                [translate]="'_DataEntry_form_save_'"></button>
+                <button
+                *ngIf="isValidator"
+                class="button valid-btn"
+                [class.input-valid]="gridData.canValidate"
+                [class.input-invalid]="!gridData.canValidate"
+                (click)="dialogValidateGrid = true; warningStockError = gridData.controlStockError(this.archivedData); warningStockBiggest = gridData.controlStockBiggest(this.archivedData)"
+                [translate]="'_DataEntry_form_submit_'"></button>
+                <div
+                class="dialog-box"
+                *ngIf="dialogValidateGrid">
+                    <div 
+                    class="consistency-check" 
+                    *ngIf="warningStockError">
+                        {{'_Form_field_warning_message_control_stock_' | translate}}
+                    </div>
+                    <div 
+                    class="consistency-check" 
+                    *ngIf="warningStockBiggest">
+                        {{'_Form_field_warning_message_control_sended_' | translate}}
+                    </div>
+                    <label [translate]="'_DataEntry_ConfirmSubmit_'"></label>
+                    <div class="buttons">
+                        <button
+                        class="button input-valid"
+                        (click)="gridData.validate(); dialogValidateGrid = false"
+                        [translate]="'_DataEntry_form_submit_'"></button>
+                        <button
+                        class="button input-invalid cancel"
+                        (click)="dialogValidateGrid = false"
+                        [translate]="'_DataEntry_form_cancel_'"></button>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <form
+        *ngIf="formControls && formControls.session.valid && displayFlag === displayStyle.FORM"
+        [formGroup]="dataEntryForm"
+        (ngSubmit)="onClickSubmitSave()">
+            <div
+            class="form-presentation"
+            [class.error]="presentationHasError(presentation)"
+            [class.active]="presentationIsValid(presentation)"
+            *ngFor="let presentation of presentationData">
+                <header (click)="presentation.collapsed = !presentation.collapsed">
+                    <div class="presentation-title">
+                        <strong>{{presentation.cd_cip13}}</strong>
+                        <span> - {{presentation.nm_medic}}</span>
+                    </div>
+                    <div
+                    class="icon-collapse"
+                    [class.i-chevron-up]="!presentation.collapsed"
+                    [class.i-chevron-down]="presentation.collapsed"></div>
+                </header>
+                <body
+                [class.d-none]="presentation.collapsed">
+                    <div class="presentation">
+                        <strong>{{'_SoldOut_form_field_presentation_' | translate}} : </strong>
+                        <label>{{presentation.ll_prest}}</label>
+                    </div>
+                    <ng-container *ngFor="let dataType of ['starting', 'recurrent']">
+                        <section *ngIf="presentation.data[dataType + 'Data'].length > 0">
+                            <app-icon-text
+                            [active]="true"
+                            [fontSize]="'21px'"
+                            [fontLineHeight]="'28px'"
+                            [srcActive]="'ansm_icons/' + dataType + '.svg'"
+                            [altText]="'_DataEntry_type_' + dataType + '_title_' | translate"
+                            [label]="'_DataEntry_type_' + dataType + '_title_' | translate"></app-icon-text>
+                            <div
+                            class="entry"
+                            *ngFor="let dataEntry of presentation.data[dataType + 'Data']">
+                                <div
+                                class="tick"
+                                [class.puce-error]="dataEntryHasError(dataEntry)"
+                                [class.puce-actif]="dataEntryIsValid(dataEntry)"></div>
+                                <div class="label-container">
+                                    <label>{{dataEntry.id_indc.sl_indc}}</label>
+                                    <label
+                                    *ngIf="dataEntry.id_indc.lb_date.length > 0"
+                                    class="indc-date">{{dataEntry.id_indc.lb_date}}</label>
+                                </div>
+                                <div class="help">
+                                    <div class="i-help"></div>
+                                    <label class="help-text">{{dataEntry.id_indc.ll_indc}}</label>
+                                </div>
+                                <div 
+                                class="input-form">
+                                    <app-data-entry-form-input
+                                    [disabled]="readOnly"
+                                    [dataEntry]="dataEntry"
+                                    [warningStockBiggest]="!readOnly && dataEntry.id_indc.cd_indc === 'IE-16' && controlSendedMoreThanStock(dataEntry)"
+                                    [warningStockError]="!readOnly && dataEntry.id_indc.cd_indc === 'IE-1' && controlErreurStock(dataEntry)"
+                                    (valueChanged)="handleResponse($event)"></app-data-entry-form-input>
+                                </div>
+                            </div>
+                        </section>
+                    </ng-container>
+                </body>
+            </div>
+            <div
+            class="message success-msg"
+            *ngIf="saveSuccess"
+            [translate]="'_DataEntry_SaveSuccess_'"></div>
+            <div
+            class="message error-msg"
+            *ngIf="error"
+            [translate]="'_Common_UnkownError_'"></div>
+            <footer *ngIf="areFooterButtonsShown">
+                <input
+                type="submit"
+                class="button"
+                [class.input-valid]="canSave"
+                [class.input-invalid]="!canSave"
+                value="{{'_DataEntry_form_save_' | translate}}">
+                <div
+                class="button valid-btn"
+                *ngIf="isValidator"
+                [class.input-valid]="canValidate"
+                [class.input-invalid]="!canValidate"
+                (click)="dialogValidateForm = true; consistencyCheck(this.archivedData)"
+                [translate]="'_DataEntry_form_submit_'"></div>
+                <div
+                class="dialog-box"
+                *ngIf="dialogValidateForm">                    
+                    <div 
+                    class="consistency-check" 
+                    *ngIf="warningStockError">
+                        {{'_Form_field_warning_message_control_stock_' | translate}}
+                    </div>
+                    <div 
+                    class="consistency-check" 
+                    *ngIf="warningStockBiggest"
+                    >
+                        {{'_Form_field_warning_message_control_sended_' | translate}}
+                    </div>
+                    <label [translate]="'_DataEntry_ConfirmSubmit_'"></label>
+                    <div class="buttons">
+                        <button
+                        class="button input-valid"
+                        (click)="onClickValidate(); dialogValidateForm = false"
+                        [translate]="'_DataEntry_form_submit_'"></button>
+                        <button
+                        class="button input-invalid cancel"
+                        (click)="dialogValidateForm = false"
+                        [translate]="'_DataEntry_form_cancel_'"></button>
+                    </div>
+                </div>
+            </footer>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="25px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>PLus picto</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A7ACB6" offset="0%"></stop>
+            <stop stop-color="#F7FBFD" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="18_DÉFINITION-GROUPES-4" transform="translate(-927.000000, -780.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Bouton-ajouter-un-groupe" transform="translate(913.000000, 772.000000)">
+                <path d="M26.8062499,8.5 C27.585946,8.5 28.2266985,9.09488808 28.2993833,9.85553999 L28.3062499,10 L28.306,19.306 L37.6124997,19.3062499 C38.4409269,19.3062499 39.1124997,19.9778227 39.1124997,20.8062499 C39.1124997,21.585946 38.5176116,22.2266985 37.7569597,22.2993833 L37.6124997,22.3062499 L28.306,22.306 L28.3062499,31.6124997 C28.3062499,32.4409269 27.634677,33.1124997 26.8062499,33.1124997 C26.0265537,33.1124997 25.3858012,32.5176116 25.3131164,31.7569597 L25.3062499,31.6124997 L25.306,22.306 L16,22.3062499 C15.1715729,22.3062499 14.5,21.634677 14.5,20.8062499 C14.5,20.0265537 15.0948881,19.3858012 15.85554,19.3131164 L16,19.3062499 L25.306,19.306 L25.3062499,10 C25.3062499,9.17157288 25.9778227,8.5 26.8062499,8.5 Z" id="PLus-picto"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+@import 'src/assets/styles/colors.scss';
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    :nth-child(1n+0) {
+        margin-bottom: 100px;
+        cursor: pointer;
+    }
+    .disable-click {
+        cursor: not-allowed;
+    }
+  }
+.message {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+    &.success-msg {
+        color: $valid-color;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .right-content {
+        padding-top: 180px !important;
+    }
+}
+@media screen and (max-width: 992px) {
+    .left-menu h1 {
+        margin-top: 35px;
+    }
+}

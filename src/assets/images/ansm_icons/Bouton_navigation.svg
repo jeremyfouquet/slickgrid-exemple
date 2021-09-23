@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 197 247" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="nav-btn" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="#FFFFFF" cx="71" cy="85" r="55"></circle>
+        <line x1="8" y1="122" x2="190" y2="122" id="Line" stroke="#394157" stroke-width="10" stroke-linecap="square"></line>
+        <line x1="8" y1="188" x2="190" y2="188" id="Line" stroke="#394157" stroke-width="10" stroke-linecap="square"></line>
+        <line x1="8" y1="56" x2="190" y2="56" id="Line" stroke="#394157" stroke-width="10" stroke-linecap="square"></line>
+    </g>
+</svg>

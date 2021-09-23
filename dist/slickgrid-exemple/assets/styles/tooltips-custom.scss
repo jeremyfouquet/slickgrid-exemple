@@ -1,0 +1,15 @@
+#chartjs-tooltip {
+    opacity: 1;
+    position: absolute;
+    background: $fond-clair;
+    box-shadow: $input-shadow;
+    color: $default-text-color;
+    font: $tooltips;
+    border-radius: 2px;
+    padding: 50px;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    pointer-events: none;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 5%);
+}

@@ -1,0 +1,67 @@
+<div *ngIf="title" class="dropdown-title" [ngClass]="{'title-white': !active}">{{title}}</div>
+  <div class="dropdown">
+    <div class="dropdown-toggle" [ngClass]="{'dropdown-disable': !active, 'dropdown-enable': active, 'input-color-disabled-white': colorDisable === 'white', 'input-color-disabled-grey': colorDisable === 'grey', 'input-valid': (dropdownToggleLabel || (dropdownToggleLabels && dropdownToggleLabels.length > 0))}" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false" (click)="onClickToggle()">
+      <div class="labelInput" *ngIf="typeOfData === 'data-entry-admin' || typeOfData === 'data-entry' || typeOfData === 'user' || typeOfData === 'session-dashboard' || typeOfData === 'group'">  
+          <p
+          [class.pendding]="pendding"> {{dropdownToggleLabel}}</p>
+      </div>
+      <div class="labelInput" *ngIf="typeOfData === 'gran'">  
+        <p>{{dropdownToggleLabel | translate}}</p>
+      </div>
+      <div *ngIf="typeOfData === 'dci'">  
+          <div class="labelInputBox" *ngFor="let data of dropdownToggleLabels">
+              {{data.nm_subst}}
+              <span (click)="onClickDelete($event, data)"></span>
+          </div>
+      </div>
+    </div>
+    <div class="dropdown-menu bottom-shadow" aria-labelledby="dropdownMenuButton">
+      <div *ngIf="search && data" class="picto-search">
+        <input #searchSession type="text" [ngClass]="{'border-input': data && data.length > 0}" placeholder="{{'_SoldOut_form_field_dci_search_' | translate}}" (keyup)="onSearch($event)">
+        <span></span>
+      </div>
+      <div *ngIf="data" class="dropdown-option" [ngClass]="{'padding-top-and-bottom': data && data.length > 0}">
+        <div 
+        class="dropdown-list"
+        *ngIf="data.length > 0">
+
+          <div *ngFor="let item of data; let i=index" [ngClass]="{'default-list': typeOfList === 'default', 'checkbox-list': typeOfList === 'checkbox'}">
+            <div *ngIf="i < 50">
+              <div *ngIf="typeOfData === 'user'" class="dropdown-item" (click)="onClick($event, item)">{{item.firstName}} {{item.lastName}} | {{item.laboName}}</div>
+              <div *ngIf="typeOfData === 'session-dashboard'" class="dropdown-item" (click)="onClick($event, item)">RUPT_{{item.id_break}}_{{item.nb_vers}} - {{item.nm_break}}</div>
+              <div *ngIf="typeOfData === 'data-entry'" class="dropdown-item" (click)="onClick($event, item)">RUPT_{{item.break.id_break}} - {{item.break.nm_break}}</div>
+              <div *ngIf="typeOfData === 'data-entry-admin'" class="dropdown-item" 
+              [class.closed]="item.fl_break_actvt === 0"  
+              [class.pendding]="item.fl_break_actvt === 2"
+              (click)="onClick($event, item)">{{item.nm_break === 'Afficher tous les produits'? item.nm_break:'RUPT_'+item.id_break+'_'+item.nb_vers+' - '+item.nm_break}}</div>
+              <div *ngIf="typeOfData === 'gran'" class="dropdown-item" (click)="onClick($event, item)">{{item.text | translate}}</div>
+              <div *ngIf="typeOfData === 'group'" class="dropdown-item" (click)="onClick($event, item)">{{item.name}}</div>
+              <label *ngIf="typeOfData === 'dci' || typeOfData === 'unit'" class="dropdown-item" (click)="onClick($event, item)">
+                  <input *ngIf="typeOfData === 'dci'" type="checkbox" [checked]="isChecked(item)" [value]="item" (change)="onChecked($event)">
+                  <input *ngIf="typeOfData === 'unit'" type="checkbox" [checked]="unitIsChecked(item)" [value]="item" (change)="onCheckedUnit($event, item)">
+                  <span class="checkmark"></span>
+                  <div *ngIf="typeOfData === 'dci'" class="text-item">{{item}}</div>
+                  <div *ngIf="typeOfData === 'unit'" class="text-item">{{item.cip}} - {{item.nom}}</div>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="search && data.length < 1">
+          <div [ngClass]="{'default-list': typeOfList === 'default', 'checkbox-list': typeOfList === 'checkbox'}">
+            <div class="dropdown-empty too-much-filter">{{dropdownNotMatche(typeOfData) | translate}}</div>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="!data && search" class="dropdown-option">
+        <div class="loader-content mt-3 mb-3 position-relative" *ngIf="loader.showSpinner === true">
+          <mat-progress-spinner  mode="indeterminate">
+          </mat-progress-spinner>
+        </div>
+        <div *ngIf="loader.showSpinner === false">
+          <div [ngClass]="{'default-list': typeOfList === 'default', 'checkbox-list': typeOfList === 'checkbox'}">
+            <div class="dropdown-empty">{{dropdownEmpty(typeOfData) | translate}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

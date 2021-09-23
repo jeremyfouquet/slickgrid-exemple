@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <g id="Page-1" stroke="none" stroke-width="1.5" fill="none" fill-rule="evenodd">
+        <polyline id="Path" stroke="#394157" stroke-linejoin="bevel" points="12.5 23.5 3.52375981 23.5 1.89905648 22.0319365 0.5 20.6626211 0.5 3.48310805 1.89905648 2.03096503 3.52375981 0.5 12.5 0.5"></polyline>
+        <line x1="7" y1="12" x2="22" y2="12" id="Line" stroke="#394157" stroke-linecap="square"></line>
+        <polyline id="Path" stroke="#394157" transform="translate(20.000000, 12.000000) rotate(90.000000) translate(-20.000000, -12.000000) " points="14 15 20 9 26 15"></polyline>
+    </g>
+</svg>

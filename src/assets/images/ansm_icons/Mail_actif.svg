@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="43px" viewBox="0 0 42 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Untitled</title>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0095D4" offset="0%"></stop>
+            <stop stop-color="#99EDE8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="2" fill="none" fill-rule="evenodd">
+            <circle id="Oval" fill="url(#linearGradient-1)" cx="10.5" cy="10.5" r="10.5"></circle>
+        <g id="Group" stroke="#394157" transform="translate(2.000000, 2.000000)">
+            <line x1="38" y1="29" x2="27" y2="29" id="Line" stroke-linecap="round" stroke-linejoin="round"></line>
+            <path  d="M18.5,8 C12.1487254,8 7,13.1487254 7,19.5 C7,25.8512746 12.1487254,31 18.5,31" id="Path" ></path>
+            <line  x1="19" y1="8" x2="27" y2="8" id="Line-2"  stroke-linecap="round"></line>
+            <line x1="27" y1="27.8452148" x2="27" y2="8" id="Line-3" stroke-linecap="round"></line>
+            <path d="M38,19.5 C38,8.73044738 29.4934102,0 19,0 C8.50658975,0 0,8.73044738 0,19.5 C0,30.2695526 8.50658975,39 19,39" id="Path" stroke-linecap="round"></path>
+            <path d="M17.5385742,31 C20.9854004,31 23.2316569,31 24.2773438,31 C26.0924479,31 27,29 27,29" id="Line-5" stroke-linecap="round"></path>
+            <line x1="38" y1="18" x2="38" y2="29" id="Line-4" stroke-linecap="round"></line>
+        </g>
+    </g>
+</svg>

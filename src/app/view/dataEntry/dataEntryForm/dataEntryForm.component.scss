@@ -1,0 +1,307 @@
+@import 'src/assets/styles/colors.scss';
+
+$base-path: '/assets/images/ansm_icons/';
+$puce-svg-path: $base-path + 'list_puce.svg';
+$puce-active-svg-path: $base-path + 'list_puce_actif.svg';
+$puce-error-svg-path: $base-path + 'list_puce_error.svg';
+
+.dropdown {
+    $label-font-size: 21px;
+
+    margin-top: 44px;
+
+    ::ng-deep app-dropdown {
+
+        > .dropdown {
+
+            #dropdownMenuButton {
+
+                ::ng-deep  .labelInput {
+                    font-size: $label-font-size;
+                    margin: 0px 35px 0px 5px;
+
+                    > p {
+                        line-height: 27px;
+                    }
+                }
+            }
+        }
+    }
+
+    .calendar-row {
+        margin-top: 20px;
+
+        .date {
+            display: flex;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font: $table-font;
+            display: flex;
+
+            label {
+                font-size: $label-font-size;
+                margin: 0;
+            }
+            span.data-archived {
+                color: $valid-color;
+            }
+
+            .triangle {
+                font-size: 11px;
+                line-height: 10px;
+                cursor: pointer;
+
+                &.i-triangle-left { margin-right: 15px; }
+                &.i-triangle-right { margin-left: 15px; }
+
+                &.disabled {
+                    user-select: none;
+                    pointer-events:none;
+                    color: $inactive-text-grey;
+                }
+            }
+
+            .triangle {
+                font-size: 11px;
+                line-height: 10px;
+
+                &.i-triangle-left { margin-right: 15px;}
+                &.i-triangle-right { margin-left: 15px;}
+
+                &.disabled {
+                    color: $inactive-text-grey;
+                    user-select: none;
+                }
+            }
+        }
+    }
+    .btn-group {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+.loader-content {
+    right: 50%;
+    height: 50vh;
+}
+
+form {
+
+    .form-presentation {
+        margin-top: 45px;
+        border-radius: 4px;
+        border: solid 1px;
+        position: relative;
+
+        &.active { border-color: $valid-color; }
+        &.error { border-color: $error-color; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background: $background-color-light-gradient;
+            border-radius: 4px;
+            cursor: pointer;
+
+            .presentation-title {
+                padding: 20px;
+                font: $presentation-title-font;
+                font-size: 18px;
+            }
+
+            .icon-collapse {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-right: 20px;
+                margin-top: 10px;
+            }
+        }
+
+        body {
+            padding: 22px;
+
+            .presentation {
+                font-family: $default-family;
+                font-size: 18px;
+                color: $default-text-color;
+            }
+
+            section {
+                padding: 22px 0;
+
+                .entry {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 22px 0;
+                    font: $input-font;
+                    font-weight: 600;
+
+                    > * {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                    }
+
+                    .tick {
+                        width: 20px;
+                        margin-right: 25px;
+
+                        &::after { content: url($puce-svg-path); }
+                        &.puce-actif::after { content: url($puce-active-svg-path); }
+                        &.puce-error::after { content: url($puce-error-svg-path); }
+                    }
+                    .label-container {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+
+                        .indc-name {
+                            margin-bottom: 3px;
+                        }
+
+                        .indc-date {
+                            margin-bottom: 0;
+                            font-size: 13px;
+                            line-height: 12px;
+                        }
+                    }
+
+                    .help {
+                        position: relative;
+
+                        &:hover{
+
+                            .i-help { 
+                                opacity: 1;}
+                            .help-text { 
+                                display: initial; }
+                        }
+
+                        .i-help {
+                            font-size: 30px;
+                            opacity: .5;
+                        }
+
+                        .help-text {
+                            display: none;
+                            position: absolute;
+                            width: max-content;
+                            max-width: 280px;
+                            padding: 15px;
+                            left: 45px;
+                            bottom: -8px;
+                            border-radius: 4px;
+                            z-index: 1000;
+                            font: $help-text-font;
+                            color: $white;
+                            background: $default-text-color;
+                        }
+                    }
+
+                    .input-form {
+                        flex: 0.6;
+                        padding-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    position: relative;
+    margin-top: 45px;
+    display: flex;
+
+    .valid-btn {
+        margin-left: 40px;
+
+        &.input-invalid {
+            pointer-events: none;
+        }
+    }
+
+    .dialog-box {
+        top: -150px;
+        .consistency-check {
+            max-width: 500px;
+            color: $error-color;
+            text-align: justify;
+        }
+    }
+}
+
+.dialog-box {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        margin: 10px 0;
+        font: $presentation-title-font;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .buttons {
+        display: flex;
+
+        button {
+            font-size: 18px;
+            cursor: pointer;
+
+            &:not(:first-child) {
+                margin-left: 40px;
+            }
+            &.input-error {
+                background: $error-color;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
+
+.message {
+    margin-top: 10px;
+    float: left;
+
+    &.success-msg { color: $valid-color; }
+    &.error-msg { color: $error-color; }
+}
+
+@media screen and (max-width: 576px) {
+    .dropdown-item {
+        padding: 0;
+    }
+    form input[type="submit"] {
+        width: 100% !important;
+    }
+}
+@media screen and (min-width: 992px) {
+    .date {
+        margin-left: 17px;
+    }
+    .btn-group-container {
+        padding-left: 20px !important;
+        .btn-group {
+            margin-left: auto;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .btn-group-container {
+        padding-top: 20px !important;
+    }
+    form {
+        .label {
+            padding-left: 0 !important;
+        }
+    }
+    .dropdown {
+        margin-top: 10px !important;
+    }
+
+    .help-text {
+        left: -245px !important;
+    }
+}

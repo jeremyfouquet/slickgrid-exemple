@@ -1,0 +1,6 @@
+<div class="nav-block">    
+    <img class="btn-navigate" width="24" height="24" src="/assets/images/ansm_icons/Profil.svg" alt="_Navbar_home_button_" (click)="onClickProfil()">
+    <img class="btn-navigate" width="24" height="24" src="/assets/images/ansm_icons/Picto_accueil.svg" alt="_Navbar_home_button_" (click)="onClickHome()">
+    <div *ngIf="true" class="welcome">{{"_Navbar_welcoming_user_" | translate}}{{currentUserValue['firstName']}} {{currentUserValue['lastName']}}</div>
+    <img class="logout" width="24" height="24" src="/assets/images/ansm_icons/Picto_logout.svg" alt="_Navbar_deconnection_" (click)="onClick('logout')">
+</div>

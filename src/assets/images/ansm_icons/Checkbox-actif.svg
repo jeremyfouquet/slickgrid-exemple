@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="20px" viewBox="0 0 114 114" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#25BED0" offset="0%"></stop>
+            <stop stop-color="#46DAD8" offset="100%"></stop>
+            <stop stop-color="#D8D8D8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="url(#linearGradient-1)" x="0" y="0" width="114" height="114" rx="25"></rect>
+        <polyline id="Path" stroke="#FFFFFF" stroke-width="17" transform="translate(59.660979, 50.094457) rotate(9.000000) translate(-59.660979, -50.094457) " points="35.1438095 58.7756998 50.467211 70.8757073 84.1781485 29.3132073"></polyline>
+    </g>
+</svg>

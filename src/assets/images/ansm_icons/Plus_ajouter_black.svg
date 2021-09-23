@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="43px" viewBox="0 0 42 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="5.40123457%" x2="100%" y2="94.5987654%" id="linearGradient-1">
+            <stop stop-color="#0095D4" offset="0%"></stop>
+            <stop stop-color="#99EDE8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <ellipse id="Oval" fill="url(#linearGradient-1)" cx="15" cy="16.5" rx="10" ry="10"></ellipse>
+        <line x1="20.5" y1="1.5" x2="20.5" y2="41.5" id="Line" stroke="#394157" stroke-width="2.5" stroke-linecap="square"></line>
+        <line x1="1" y1="22" x2="41" y2="22" id="Line-2" stroke="#394157" stroke-width="2.5" stroke-linecap="square"></line>
+    </g>
+</svg>

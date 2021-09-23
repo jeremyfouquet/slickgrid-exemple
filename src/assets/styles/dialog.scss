@@ -1,0 +1,15 @@
+@import 'src/assets/styles/colors.scss';
+
+.dialog-box {
+    position: absolute;
+    background: $white;
+    width: fit-content;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px;
+    border-radius: 5px;
+    box-shadow: $input-shadow;
+    z-index: 100;
+}

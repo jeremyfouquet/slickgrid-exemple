@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="41px" height="40px" viewBox="0 0 148 189" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mise_a-jour_inactif.svg" stroke="#A7ACB6" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M21.1484375,130.230795 L-0.806477528,174.140625 L43.1033525,174.140625 L21.1484375,130.230795 Z" id="Triangle" stroke-width="10" transform="translate(21.148438, 150.640625) rotate(-144.000000) translate(-21.148438, -150.640625) "></path>
+        <rect id="Rectangle" stroke-width="10" transform="translate(80.000000, 68.000000) rotate(-54.000000) translate(-80.000000, -68.000000) " x="18.5" y="44.5" width="123" height="47" rx="8"></rect>
+        <line x1="8.5" y1="186.5" x2="138.5" y2="186.5" id="Line" stroke-width="15" stroke-linecap="square"></line>
+    </g>
+</svg>

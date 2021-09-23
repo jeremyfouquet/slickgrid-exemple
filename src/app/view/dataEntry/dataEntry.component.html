@@ -1,0 +1,20 @@
+<div class="row height-max-content">
+  <div class="left-menu p-0 col-lg-1">
+    <app-navbar class="navbar"></app-navbar>
+  </div>
+
+
+  <div class="col-lg-11 right-content">
+    <div class="header">
+      <app-highlight-title [title]="'_Home_label_data_entry_' | translate"
+        [highlight]="['_DataEntry_title__highlighted_' | translate]" [text]="'_DataEntry_text_'"></app-highlight-title>
+    </div>
+    <app-data-entry-form
+    [currentUser]="currentUser"
+    [isAdmin]="isAdmin"
+    [data]="data"
+    [listDataFound]="data"
+    [archive]="archivedData"
+    (emitIsValidateOrSave)="handleIsValidateOrSave($event)"></app-data-entry-form>
+  </div>
+</div>

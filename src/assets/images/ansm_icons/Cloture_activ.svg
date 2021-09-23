@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="39px" viewBox="0 0 115 135" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="0%" x2="100%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0096D4" offset="0%"></stop>
+            <stop stop-color="#99EEE8" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="Oval" fill="url(#linearGradient-1)" cx="35" cy="55" r="35"></circle>
+        <g id="Group" transform="translate(24.000000, 4.222656)" stroke="#394157" stroke-width="8">
+            <path d="M17.7617187,51.2773438 C17.7005208,17.0924479 26.6132813,3.55271368e-15 44.5,3.55271368e-15 C62.3867187,3.55271368e-15 71.7929687,17.0924479 72.71875,51.2773438 L17.7617187,51.2773438 Z" id="Line" stroke-linecap="square"></path>
+            <rect id="Rectangle" x="4" y="63.7773438" width="83" height="62" rx="8"></rect>
+            <circle id="Oval" cx="45" cy="85.7773438" r="8"></circle>
+            <path d="M47.9448166,97.7773438 L42.0551834,97.7773438 L38.2370015,111.777344 L51.7629985,111.777344 L47.9448166,97.7773438 Z" id="Rectangle"></path>
+        </g>
+    </g>
+</svg>

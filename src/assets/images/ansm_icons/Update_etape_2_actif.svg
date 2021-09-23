@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="58px" height="73px" viewBox="0 0 189 250" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <title>Untitled</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Mise_a-jour.svg" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="#FFFFFF" cx="121.5" cy="182.5" r="67.5"></circle>
+            <g id="Group-2" transform="translate(5.500000, 18.125000)" stroke="#394157" stroke-linecap="square" stroke-linejoin="round" stroke-width="10">
+                <line x1="0.5" y1="0.875" x2="0.5" y2="191.875" id="Line"></line>
+                <line x1="141.5" y1="0.875" x2="141.5" y2="191.875" id="Line"></line>
+                <line x1="6.5" y1="191.875" x2="141" y2="192.375" id="Line-2"></line>
+                <line x1="6.5" y1="0.875" x2="26.5" y2="0.875" id="Line-3"></line>
+                <line x1="121.625" y1="0.75" x2="141.375" y2="1" id="Line-3"></line>
+            </g>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="34" y="5" width="85" height="28" rx="2"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="43" y="59" width="20" height="20"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="95" y="59" width="20" height="20"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="43" y="108" width="20" height="20"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="96" y="108" width="20" height="20"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="96" y="157" width="20" height="20"></rect>
+            <rect id="Rectangle" stroke="#394157" stroke-width="10" x="43" y="157" width="20" height="20"></rect>
+        </g>
+    </g>
+</svg>

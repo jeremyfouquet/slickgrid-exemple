@@ -1,0 +1,21 @@
+@import 'src/assets/styles/colors.scss';
+.nav-block {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    font: $checkbox-font;
+    font-weight: 600;
+    margin: 10px;
+    color: $default-text-color;
+    .welcome {
+        margin-right: 20px;
+    }
+    img {
+        &:hover {
+            cursor: pointer;
+        }
+        &.btn-navigate {
+            margin-right: 20px;
+        }
+    }
+}

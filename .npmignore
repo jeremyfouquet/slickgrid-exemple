@@ -1,0 +1,13 @@
+/**/.settings/
+/**/.project
+/**/.classpath
+/**/target/
+**.iml
+**.idea
+/**/.vscode/
+/**/.swagger-codegen/
+.DS_Store
+
+node_modules/
+script/scriptConfig.json
+src/config/config.app.json

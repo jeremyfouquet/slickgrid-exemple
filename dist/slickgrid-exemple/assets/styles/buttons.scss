@@ -1,0 +1,105 @@
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 220px;
+    padding-bottom: 2px;
+    border-style: none;
+    border-radius: 4px;
+    color: $white;
+    font: $input-font;
+    box-shadow: $input-shadow;
+    outline: none !important;
+
+    &.input-invalid {
+        background: $inactive-text-grey;
+        cursor: not-allowed;
+    }
+    &.input-cancel {
+        background: $inactive-text-grey;
+    }
+
+    &.input-valid {
+        background: $background-color-green-gradient;
+        cursor: pointer;
+    }
+    &.input-error {
+        background: $error-color;
+    }
+}
+
+.btn-group {
+    display: flex;
+    height: 40px;
+    border: 1px solid $valid-color;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: $white;
+    box-shadow: $input-shadow;
+    button {
+        flex-grow: 1;
+        flex-basis: 1;
+        border-radius: 0;
+        outline: none;
+        color: $inactive-text-grey;
+        padding: 0 20px;
+        border: none;
+        background: none;
+        font-family: $exeption-family;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        &:hover {
+            text-overflow: initial;
+            overflow: visible;
+        }
+        &:first-child {
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-right: 0;
+        }
+
+        &:last-child {
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-left: 0;
+        }
+
+        &.active {
+            color: $white;
+            background: $background-color-green-gradient;
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+    }
+
+    &.change-color {
+        background: transparent !important;
+        border: 1px solid $white !important;
+        &.not-active {
+            pointer-events: none;
+            box-shadow: none !important;
+            .active {
+            color: $inactive-text-grey !important;
+            }
+        }
+        &.active {
+            .active {
+                box-shadow: $input-shadow !important;
+                color: $gradientGreen !important;
+            }
+        }
+        button {
+            color: $white !important;
+            &.active {
+                color: $white !important;
+                background: $white !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@import 'src/assets/styles/colors.scss';
+
+.data-entry-form-input-container {
+
+    .error-block {
+        float: right;
+        height: 0;
+    }
+
+    .warning-control {
+        color: $error-color;
+    }
+}

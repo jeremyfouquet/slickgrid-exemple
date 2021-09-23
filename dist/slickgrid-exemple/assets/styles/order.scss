@@ -1,0 +1,41 @@
+.col-order{
+    cursor: pointer;
+    >div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    span {
+        color: $inactive-text-grey;
+        margin-left: 10px;
+        transition: all 0.5s;
+        height: max-content;
+        &.reverse{
+          -webkit-transform: rotate(180deg);
+          -moz-transform: rotate(180deg);
+          transform: rotate(180deg);
+        }
+    }
+
+    &.order-disable{
+        cursor: default !important;
+        span {
+            display: none;
+          } 
+    }
+    &:not(.order-actif){
+      span {
+        visibility: hidden;
+      }
+      &:hover{
+        span {
+          visibility: visible;
+        }
+      }
+    }
+    &.order-actif{
+        span {
+          color: $default-text-color;
+        }
+    }
+  }

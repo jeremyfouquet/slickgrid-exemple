@@ -1,0 +1,54 @@
+@import 'src/assets/styles/colors.scss';
+
+
+::ng-deep .dropdown {
+  .dropdown-item {
+    &:hover{
+      color: $blue;
+    }
+  }
+  .dropdown-toggle::after {
+      font-size: 1.5em;
+      position: absolute;
+      top: .35em;
+      // right: .5em;
+      transition: all 0.5s;
+  }
+  &.show .dropdown-toggle::after {
+      transform: rotate(180deg);
+      -ms-transform: rotate(180deg); /* IE 9 */
+      -webkit-transform: rotate(180deg); /* Safari and Chrome */
+      -o-transform: rotate(180deg); /* Opera */
+      -moz-transform: rotate(180deg); /* Firefox */
+  }
+}
+.icon-container {
+  display: flex;
+  align-items: center;
+  font-family: $exeption-family;
+  &.no-margin{
+    flex-wrap: wrap;
+    img {
+      margin-right: 22px;
+    }
+    .icon-label {
+      margin-left: 0 !important;
+    }
+  }
+  img {
+    max-width: initial;
+  }
+  .icon-label {
+    margin-left: 22px;
+  }
+  .activeColor {
+    color: $default-text-color;
+  }
+  
+  .inactiveWhite {
+    color: $white;
+  }
+  .inactiveGrey {
+    color: $inactive-text-grey;
+  }
+}

@@ -1,0 +1,26 @@
+<div class="icon-container" [ngClass]="{'no-margin': noMargin}" >
+  <div *ngIf="!noIcon" class="icon-image">
+    <img width="34" height="40" [src]="active ? srcActive : srcInactive" [alt]="altText">
+  </div>
+  <div 
+  *ngIf="!lblUrl" class="icon-label" [style.font-size]="fontSize" [style.line-height]="fontLineHeight" [ngClass]="{'disable-click': active === false, activeColor: active, inactiveWhite: !active && colorInactive === 'white', inactiveGrey: !active && colorInactive === 'grey'}">
+    {{label}}
+    <span *ngIf='afterLabel'>{{afterLabel}}</span>
+  </div>
+  <div  
+  *ngIf="lblUrl"
+  class="dropdown">
+    <div 
+    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+    class="icon-label dropdown-toggle" [style.font-size]="fontSize" [style.line-height]="fontLineHeight" [ngClass]="{'disable-click': active === false, activeColor: active, inactiveWhite: !active && colorInactive === 'white', inactiveGrey: !active && colorInactive === 'grey'}">
+      {{label}}
+      <span *ngIf='afterLabel'>{{afterLabel}}</span>
+    </div>
+    <div 
+    class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a 
+      *ngFor="let url of lblUrl"
+      class="dropdown-item" [routerLink]='url.url' [translate]="url.lbl"></a>
+    </div>
+  </div>
+</div>
